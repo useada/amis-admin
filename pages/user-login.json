@@ -1,0 +1,27 @@
+{
+    "type": "page",
+    "title": "登陆",
+    "body": [
+      {
+        "type": "form",
+        "title": "",
+        "redirect": "/broker/list",
+        "name": "sample-edit-form",
+        "api": "post:http://127.0.0.1:2020/api/v1/user/auth",
+        "body": [
+          {
+            "type": "input-email",
+            "name": "email",
+            "label": "邮箱",
+            "required": true
+          },
+          {
+            "type": "input-password",
+            "name": "password",
+            "label": "密码"
+          }
+        ],
+        "columnCount": 2
+      }
+    ]
+  }

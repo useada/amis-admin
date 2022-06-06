@@ -1,0 +1,161 @@
+{
+    "type": "page",
+    "title": "broker 列表",
+    "name": "broker list",
+    "toolbar": [
+      {
+        "type": "button",
+        "actionType": "link",
+        "link": "/crud/new",
+        "label": "新增",
+        "primary": true
+      }
+    ],
+    "body": [
+      {
+        "type": "crud",
+        "name": "sample",
+        "api": "http://127.0.0.1:2020/api/v1/broker/list",
+        "filter": {
+          "title": "",
+          "mode": "inline",
+          "wrapWithPanel": false,
+          "submitText": "",
+          "className": "m-b-sm",
+          "body": [
+            {
+              "type": "input-text",
+              "name": "keywords",
+              "placeholder": "通过关键字搜索",
+              "addOn": {
+                "label": "搜索",
+                "type": "submit",
+                "className": "btn-success"
+              },
+              "clearable": true
+            }
+          ]
+        },
+        "bulkActions": [
+          {
+            "label": "刷新",
+            "type": "button",
+            "actionType": "ajax",
+            "api": "http://127.0.0.1:2020/api/v1/broker/list"
+          }
+        ],
+        "affixHeader": true,
+        "columnsTogglable": "auto",
+        "placeholder": "暂无数据",
+        "tableClassName": "table-db table-striped",
+        "headerClassName": "crud-table-header",
+        "footerClassName": "crud-table-footer",
+        "toolbarClassName": "crud-table-toolbar",
+        "combineNum": 0,
+        "bodyClassName": "panel-default",
+        "perPageAvailable": [
+          10
+        ],
+        "messages": {
+        },
+        "mode": "table",
+        "columns": [
+          {
+            "name": "name",
+            "label": "代理商名称",
+            "sortable": true
+          },
+          {
+            "name": "status",
+            "label": "状态",
+            "sortable": true
+          },
+          {
+            "name": "identifyCodePic",
+            "label": "验证码",
+            "placeholder": "-",
+            "type": "image"
+          },
+          {
+            "type": "operation",
+            "label": "操作",
+            "width": "",
+            "buttons": [
+              {
+                "type": "button-group",
+                "buttons": [
+                  {
+                    "type": "button",
+                    "label": "登入",
+                    "level": "primary",
+                    "actionType": "dialog",
+                    "dialog": {
+                      "title": "登陆",
+                      "name": "sample-bulk-edit",
+                      "body": {
+                        "type": "form",
+                        "api": "/api/v1/broker/auth",
+                        "data": {
+                          "&": "$$",
+                          "accessKey": "${accessKey}",
+                          "secretKey": "${secretKey}",
+                          "identifyCode": "${identifyCode}"
+                        },
+                        "body": [
+                          {
+                            "type": "input-text",
+                            "name": "accessKey",
+                            "label": "accessKey"
+                          },
+                          {
+                            "type": "input-text",
+                            "name": "secretKey",
+                            "label": "secretKey"
+                          },
+                          {
+                            "type": "input-text",
+                            "name": "identifyCode",
+                            "label": "identifyCode"
+                          }
+                        ]
+                      }
+                    },
+                    "visibleOn": "this.status==0"
+                  },
+                  {
+                    "type": "button",
+                    "label": "注销",
+                    "level": "danger",
+                    "actionType": "ajax",
+                    "api": "post:http://127.0.0.1:2020/api/v1/broker/stopTrade",
+                    "confirmText": "您确认要注销?",
+                    "visibleOn": "this.status!==0"
+                  },
+                  {
+                    "type": "button",
+                    "label": "开始交易",
+                    "level": "primary",
+                    "actionType": "ajax",
+                    "confirmText": "您确认要开启交易?",
+                    "api": "post:http://127.0.0.1:2020/api/v1/broker/startTrade",
+                    "visibleOn": "this.status == 2 && this.tradeStatus==0"
+                  },
+                  {
+                    "type": "button",
+                    "label": "结束交易",
+                    "level": "danger",
+                    "actionType": "ajax",
+                    "confirmText": "您确认要停止交易?",
+                    "api": "post:http://127.0.0.1:2020/api/v1/broker/stopTrade",
+                    "visibleOn": "this.status == 2 && this.tradeStatus==1"
+                  }
+                ]
+              }
+            ],
+            "placeholder": "-",
+            "fixed": "right"
+          }
+        ]
+      }
+    ]
+  }

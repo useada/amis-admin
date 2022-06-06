@@ -50,12 +50,16 @@
             ]
           },
           {
-            "label": "页面B",
-            "schema": {
-              "type": "page",
-              "title": "页面B",
-              "body": "页面B"
-            }
+            "label": "用户登陆",
+            "url": "/user/login",
+            "icon": "fa fa-list",
+            "schemaApi": "get:/pages/user-login.json"
+          },
+          {
+            "label": "代理商列表",
+            "url": "/broker/list",
+            "icon": "fa fa-list",
+            "schemaApi": "get:/pages/broker-list.json"
           },
           {
             "label": "页面C",
