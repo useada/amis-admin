@@ -1,0 +1,194 @@
+{
+    "type": "page",
+    "title": "job 列表",
+    "body": [
+      {
+        "type": "crud",
+        "name": "sample",
+        "api": "http://127.0.0.1:2020/api/v1/job/list",
+        "filter": {
+          "title": "",
+          "mode": "inline",
+          "wrapWithPanel": false,
+          "submitText": "",
+          "className": "m-b-sm",
+          "body": [
+            {
+              "type": "input-text",
+              "name": "keywords",
+              "placeholder": "通过关键字搜索",
+              "addOn": {
+                "label": "搜索",
+                "type": "submit",
+                "className": "btn-success"
+              },
+              "clearable": true
+            }
+          ]
+        },
+        "bulkActions": [
+          {
+            "label": "刷新",
+            "type": "button",
+            "actionType": "ajax",
+            "api": "http://127.0.0.1:2020/api/v1/job/list"
+          }
+        ],
+        "affixHeader": true,
+        "columnsTogglable": "auto",
+        "placeholder": "暂无数据",
+        "tableClassName": "table-db table-striped",
+        "headerClassName": "crud-table-header",
+        "footerClassName": "crud-table-footer",
+        "toolbarClassName": "crud-table-toolbar",
+        "combineNum": 0,
+        "bodyClassName": "panel-default",
+        "perPageAvailable": [
+          10
+        ],
+        "messages": {
+        },
+        "mode": "table",
+        "columns": [
+          {
+            "name": "name",
+            "label": "任务名称",
+            "sortable": true
+          },
+          {
+            "name": "desc",
+            "label": "任务描述",
+            "sortable": true
+          },
+          {
+            "name": "command",
+            "label": "命令",
+            "sortable": true
+          },
+          {
+            "name": "work_path",
+            "label": "工作路径",
+            "sortable": true
+          },
+          {
+            "name": "status",
+            "label": "状态",
+            "sortable": true
+          },
+          {
+            "name": "trade_status",
+            "label": "交易状态",
+            "sortable": true
+          },
+          {
+            "name": "created_at",
+            "label": "创建时间",
+            "sortable": true
+          },
+          {
+            "name": "updated_at",
+            "label": "更新时间",
+            "sortable": true
+          },
+          {
+            "type": "operation",
+            "label": "操作",
+            "width": "",
+            "buttons": [
+              {
+                "type": "button-group",
+                "buttons": [
+                  {
+                    "type": "button",
+                    "label": "编辑",
+                    "level": "primary",
+                    "actionType": "dialog",
+                    "dialog": {
+                      "title": "编辑",
+                      "name": "sample-bulk-edit",
+                      "body": {
+                        "type": "form",
+                        "api": "/api/v1/broker/auth",
+                        "data": {
+                          "&": "$$",
+                          "accessKey": "${accessKey}",
+                          "secretKey": "${secretKey}",
+                          "identifyCode": "${identifyCode}"
+                        },
+                        "body": [
+                          {
+                            "type": "input-text",
+                            "name": "accessKey",
+                            "label": "accessKey"
+                          },
+                          {
+                            "type": "input-text",
+                            "name": "secretKey",
+                            "label": "secretKey"
+                          },
+                          {
+                            "type": "input-text",
+                            "name": "identifyCode",
+                            "label": "identifyCode"
+                          }
+                        ]
+                      }
+                    },
+                    "visibleOn": "this.status==0"
+                  },
+                  {
+                    "type": "button",
+                    "label": "启动",
+                    "level": "danger",
+                    "actionType": "ajax",
+                    "api": "post:http://127.0.0.1:2020/api/v1/job/start",
+                    "confirmText": "您确认要启动?",
+                    "visibleOn": "this.status!==0"
+                  },
+                  {
+                    "type": "button",
+                    "label": "停止",
+                    "level": "danger",
+                    "actionType": "ajax",
+                    "confirmText": "您确认要停止?",
+                    "api": "post:http://127.0.0.1:2020/api/v1/job/stop",
+                    "visibleOn": "this.status!==0"
+                  },
+                  {
+                    "type": "button",
+                    "label": "开始交易",
+                    "level": "primary",
+                    "actionType": "ajax",
+                    "confirmText": "您确认要开启交易?",
+                    "api": "post:http://127.0.0.1:2020/api/v1/broker/startTrade",
+                    "visibleOn": "this.status == 2 && this.tradeStatus==0"
+                  },
+                  {
+                    "type": "button",
+                    "label": "结束交易",
+                    "level": "danger",
+                    "actionType": "ajax",
+                    "confirmText": "您确认要停止交易?",
+                    "api": "post:http://127.0.0.1:2020/api/v1/broker/stopTrade",
+                    "visibleOn": "this.status == 2 && this.tradeStatus==1"
+                  }
+                ]
+              }
+            ],
+            "placeholder": "-",
+            "fixed": "right"
+          }
+        ]
+      }
+    ],
+    "name": "job list",
+    "toolbar": [
+      {
+        "type": "button",
+        "actionType": "link",
+        "link": "/job/new",
+        "label": "新增",
+        "primary": true
+      }
+    ]
+  }

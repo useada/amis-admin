@@ -1,0 +1,62 @@
+{
+  "type": "page",
+  "title": "新增",
+  "body": [
+    {
+      "type": "form",
+      "title": "",
+      "redirect": "/job/list",
+      "name": "sample-edit-form",
+      "api": "http://127.0.0.1:2020/api/v1/job/create",
+      "body": [
+        {
+          "type": "input-text",
+          "name": "name",
+          "label": "任务名称",
+          "required": true,
+          "inline": false,
+          "description": "",
+          "descriptionClassName": "help-block",
+          "placeholder": "",
+          "addOn": null
+        },
+        {
+          "type": "divider"
+        },
+        {
+          "type": "input-text",
+          "name": "desc",
+          "label": "任务描述",
+          "required": true
+        },
+        {
+          "type": "divider"
+        },
+        {
+          "type": "input-text",
+          "name": "command",
+          "label": "命令",
+          "required": true
+        },
+        {
+          "type": "divider"
+        },
+        {
+          "type": "input-text",
+          "name": "work_path",
+          "label": "工作路径",
+          "required": true
+        }
+      ]
+    }
+  ],
+  "remark": null,
+  "toolbar": [
+    {
+      "type": "button",
+      "actionType": "link",
+      "link": "/job/list",
+      "label": "返回列表"
+    }
+  ]
+}

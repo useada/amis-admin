@@ -62,6 +62,18 @@
             "schemaApi": "get:/pages/broker-list.json"
           },
           {
+            "label": "任务列表",
+            "url": "/job/list",
+            "icon": "fa fa-list",
+            "schemaApi": "get:/pages/job-list.json"
+          },
+          {
+            "label": "创建任务",
+            "url": "/job/new",
+            "icon": "fa fa-list",
+            "schemaApi": "get:/pages/job-new.json"
+          },
+          {
             "label": "页面C",
             "schema": {
               "type": "page",
