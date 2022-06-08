@@ -1,13 +1,12 @@
 {
   "type": "page",
-  "title": "新增",
+  "title": "编辑任务 ${params.id}",
   "body": [
     {
       "type": "form",
-      "title": "",
+      "initApi": "get:http://127.0.0.1:2020/api/v1/job/get?job_id=${params.id}",
+      "api": "post:http://127.0.0.1:2020/api/v1/job/update",
       "redirect": "/job/list",
-      "name": "sample-edit-form",
-      "api": "http://127.0.0.1:2020/api/v1/job/create",
       "body": [
         {
           "type": "input-text",

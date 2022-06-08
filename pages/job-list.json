@@ -81,11 +81,13 @@
             "sortable": true
           },
           {
+            "type": "datetime",
             "name": "created_at",
             "label": "创建时间",
             "sortable": true
           },
           {
+            "type": "datetime",
             "name": "updated_at",
             "label": "更新时间",
             "sortable": true
@@ -108,28 +110,52 @@
                       "name": "sample-bulk-edit",
                       "body": {
                         "type": "form",
-                        "api": "/api/v1/broker/auth",
+                        "api": "post:http://127.0.0.1:2020/api/v1/job/update",
                         "data": {
-                          "&": "$$",
-                          "accessKey": "${accessKey}",
-                          "secretKey": "${secretKey}",
-                          "identifyCode": "${identifyCode}"
+                          "job_id": "${id}",
+                          "name": "${name}",
+                          "desc": "${desc}",
+                          "command": "${command}",
+                          "work_path": "${work_path}"
                         },
                         "body": [
                           {
                             "type": "input-text",
-                            "name": "accessKey",
-                            "label": "accessKey"
+                            "name": "name",
+                            "label": "任务名称",
+                            "required": true,
+                            "inline": false,
+                            "description": "",
+                            "descriptionClassName": "help-block",
+                            "placeholder": "",
+                            "addOn": null
+                          },
+                          {
+                            "type": "divider"
                           },
                           {
                             "type": "input-text",
-                            "name": "secretKey",
-                            "label": "secretKey"
+                            "name": "desc",
+                            "label": "任务描述",
+                            "required": true
                           },
                           {
-                            "type": "input-text",
-                            "name": "identifyCode",
-                            "label": "identifyCode"
+                            "type": "divider"
+                          },
+                          {
+                            "type": "textarea",
+                            "name": "command",
+                            "label": "命令",
+                            "required": true
+                          },
+                          {
+                            "type": "divider"
+                          },
+                          {
+                            "type": "textarea",
+                            "name": "work_path",
+                            "label": "工作路径",
+                            "required": true
                           }
                         ]
                       }
@@ -145,7 +171,7 @@
                       "method": "post",
                       "url": "http://127.0.0.1:2020/api/v1/job/start",
                       "data": {
-                      "job_id": "${id}"
+                        "job_id": "${id}"
                       }
                     },
                     "confirmText": "您确认要启动?",
@@ -161,7 +187,7 @@
                       "method": "post",
                       "url": "http://127.0.0.1:2020/api/v1/job/stop",
                       "data": {
-                      "job_id": "${id}"
+                        "job_id": "${id}"
                       }
                     },
                     "visibleOn": "this.status===2"
@@ -176,7 +202,7 @@
                       "method": "post",
                       "url": "http://127.0.0.1:2020/api/v1/broker/startTrade",
                       "data": {
-                      "job_id": "${id}"
+                        "job_id": "${id}"
                       }
                     },
                     "visibleOn": "this.status === 2 && this.tradeStatus===0"
@@ -191,7 +217,7 @@
                       "method": "post",
                       "url": "http://127.0.0.1:2020/api/v1/broker/stopTrade",
                       "data": {
-                      "job_id": "${id}"
+                        "job_id": "${id}"
                       }
                     },
                     "visibleOn": "this.status === 2 && this.tradeStatus===1"

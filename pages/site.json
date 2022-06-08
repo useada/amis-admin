@@ -74,6 +74,12 @@
             "schemaApi": "get:/pages/job-new.json"
           },
           {
+            "label": "编辑任务",
+            "url": "/job/edit",
+            "icon": "fa fa-list",
+            "schemaApi": "get:/pages/job-edit.json"
+          },
+          {
             "label": "页面C",
             "schema": {
               "type": "page",
