@@ -141,9 +141,15 @@
                     "label": "启动",
                     "level": "danger",
                     "actionType": "ajax",
-                    "api": "post:http://127.0.0.1:2020/api/v1/job/start",
+                    "api": {
+                      "method": "post",
+                      "url": "http://127.0.0.1:2020/api/v1/job/start",
+                      "data": {
+                      "job_id": "${id}"
+                      }
+                    },
                     "confirmText": "您确认要启动?",
-                    "visibleOn": "this.status!==0"
+                    "visibleOn": "this.status!==2"
                   },
                   {
                     "type": "button",
@@ -151,8 +157,14 @@
                     "level": "danger",
                     "actionType": "ajax",
                     "confirmText": "您确认要停止?",
-                    "api": "post:http://127.0.0.1:2020/api/v1/job/stop",
-                    "visibleOn": "this.status!==0"
+                    "api": {
+                      "method": "post",
+                      "url": "http://127.0.0.1:2020/api/v1/job/stop",
+                      "data": {
+                      "job_id": "${id}"
+                      }
+                    },
+                    "visibleOn": "this.status===2"
                   },
                   {
                     "type": "button",
@@ -160,8 +172,14 @@
                     "level": "primary",
                     "actionType": "ajax",
                     "confirmText": "您确认要开启交易?",
-                    "api": "post:http://127.0.0.1:2020/api/v1/broker/startTrade",
-                    "visibleOn": "this.status == 2 && this.tradeStatus==0"
+                    "api": {
+                      "method": "post",
+                      "url": "http://127.0.0.1:2020/api/v1/broker/startTrade",
+                      "data": {
+                      "job_id": "${id}"
+                      }
+                    },
+                    "visibleOn": "this.status === 2 && this.tradeStatus===0"
                   },
                   {
                     "type": "button",
@@ -169,8 +187,14 @@
                     "level": "danger",
                     "actionType": "ajax",
                     "confirmText": "您确认要停止交易?",
-                    "api": "post:http://127.0.0.1:2020/api/v1/broker/stopTrade",
-                    "visibleOn": "this.status == 2 && this.tradeStatus==1"
+                    "api": {
+                      "method": "post",
+                      "url": "http://127.0.0.1:2020/api/v1/broker/stopTrade",
+                      "data": {
+                      "job_id": "${id}"
+                      }
+                    },
+                    "visibleOn": "this.status === 2 && this.tradeStatus===1"
                   }
                 ]
               }
