@@ -207,12 +207,12 @@
                     "confirmText": "您确认要开启交易?",
                     "api": {
                       "method": "post",
-                      "url": "http://127.0.0.1:2020/api/v1/broker/startTrade",
+                      "url": "http://127.0.0.1:2020/api/v1/job/start_trade",
                       "data": {
                         "job_id": "${id}"
                       }
                     },
-                    "visibleOn": "this.status === 2 && this.tradeStatus===0"
+                    "visibleOn": "this.status === 2 && this.trade_status===0"
                   },
                   {
                     "type": "button",
@@ -222,12 +222,12 @@
                     "confirmText": "您确认要停止交易?",
                     "api": {
                       "method": "post",
-                      "url": "http://127.0.0.1:2020/api/v1/broker/stopTrade",
+                      "url": "http://127.0.0.1:2020/api/v1/job/stop_trade",
                       "data": {
                         "job_id": "${id}"
                       }
                     },
-                    "visibleOn": "this.status === 2 && this.tradeStatus===1"
+                    "visibleOn": "this.status === 2 && this.trade_status===1"
                   }
                 ]
               }
