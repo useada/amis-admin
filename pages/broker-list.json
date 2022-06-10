@@ -94,24 +94,13 @@
                       "name": "sample-bulk-edit",
                       "body": {
                         "type": "form",
-                        "api": "/api/v1/broker/auth",
+                        "api": "post:http://127.0.0.1:2020/api/v1/broker/auth",
                         "data": {
-                          "&": "$$",
                           "accessKey": "${accessKey}",
                           "secretKey": "${secretKey}",
                           "identifyCode": "${identifyCode}"
                         },
                         "body": [
-                          {
-                            "type": "input-text",
-                            "name": "accessKey",
-                            "label": "accessKey"
-                          },
-                          {
-                            "type": "input-text",
-                            "name": "secretKey",
-                            "label": "secretKey"
-                          },
                           {
                             "type": "input-text",
                             "name": "identifyCode",
