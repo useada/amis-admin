@@ -6,49 +6,11 @@
       {
         "label": "Home",
         "url": "/",
-        "redirect": "/index/1"
+        "redirect": "/user/login"
       },
       {
-        "label": "示例",
+        "label": "管理后台",
         "children": [
-          {
-            "label": "页面A",
-            "url": "index",
-            "schema": {
-              "type": "page",
-              "title": "页面A",
-              "body": "页面A"
-            },
-            "children": [
-              {
-                "label": "页面A-1",
-                "url": "1",
-                "schema": {
-                  "type": "page",
-                  "title": "页面A-1",
-                  "body": "页面A-1"
-                }
-              },
-              {
-                "label": "页面A-2",
-                "url": "2",
-                "schema": {
-                  "type": "page",
-                  "title": "页面A-2",
-                  "body": "页面A-2"
-                }
-              },
-              {
-                "label": "页面A-3",
-                "url": "3",
-                "schema": {
-                  "type": "page",
-                  "title": "页面A-3",
-                  "body": "页面A-3"
-                }
-              }
-            ]
-          },
           {
             "label": "用户登陆",
             "url": "/user/login",
@@ -62,85 +24,33 @@
             "schemaApi": "get:/pages/broker-list.json"
           },
           {
-            "label": "任务列表",
-            "url": "/job/list",
-            "icon": "fa fa-list",
-            "schemaApi": "get:/pages/job-list.json"
-          },
-          {
-            "label": "创建任务",
-            "url": "/job/new",
-            "icon": "fa fa-list",
-            "schemaApi": "get:/pages/job-new.json"
-          },
-          {
-            "label": "编辑任务",
-            "url": "/job/edit",
-            "icon": "fa fa-list",
-            "schemaApi": "get:/pages/job-edit.json"
-          },
-          {
-            "label": "页面C",
+            "label": "任务管理",
+            "url": "job",
             "schema": {
               "type": "page",
-              "title": "页面C",
-              "body": "页面C"
-            }
-          },
-          {
-            "label": "列表示例",
-            "url": "/crud",
-            "rewrite": "/crud/list",
-            "icon": "fa fa-cube",
+              "title": "任务管理",
+              "body": "任务管理"
+            },
             "children": [
               {
-                "label": "列表",
-                "url": "/crud/list",
+                "label": "任务列表",
+                "url": "/job/list",
                 "icon": "fa fa-list",
-                "schemaApi": "get:/pages/crud-list.json"
+                "schemaApi": "get:/pages/job-list.json"
               },
               {
-                "label": "新增",
-                "url": "/crud/new",
-                "icon": "fa fa-plus",
-                "schemaApi": "get:/pages/crud-new.json"
+                "label": "创建任务",
+                "url": "/job/new",
+                "icon": "fa fa-list",
+                "schemaApi": "get:/pages/job-new.json"
               },
               {
-                "label": "查看",
-                "url": "/crud/:id",
-                "schemaApi": "get:/pages/crud-view.json"
-              },
-              {
-                "label": "修改",
-                "url": "/crud/:id/edit",
-                "schemaApi": "get:/pages/crud-edit.json"
+                "label": "编辑任务",
+                "url": "/job/edit",
+                "icon": "fa fa-list",
+                "schemaApi": "get:/pages/job-edit.json"
               }
             ]
-          }
-        ]
-      },
-      {
-        "label": "分组2",
-        "children": [
-          {
-            "label": "用户管理",
-            "schema": {
-              "type": "page",
-              "title": "用户管理",
-              "body": "页面C"
-            }
-          },
-          {
-            "label": "外部链接",
-            "link": "http://baidu.gitee.io/amis"
-          },
-          {
-            "label": "部门管理",
-            "schemaApi": "https://3xsw4ap8wah59.cfc-execute.bj.baidubce.com/api/amis-mock/mock2/service/form?tpl=tpl3"
-          },
-          {
-            "label": "jsonp 返回示例",
-            "schemaApi": "jsonp:/pages/jsonp.js?callback=jsonpCallback"
           }
         ]
       }

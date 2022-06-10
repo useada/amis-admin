@@ -6,6 +6,9 @@
         "type": "crud",
         "name": "sample",
         "api": "http://127.0.0.1:2020/api/v1/job/list",
+        "headerToolbar": [
+            "reload"
+        ],
         "filter": {
           "title": "",
           "mode": "inline",
@@ -71,14 +74,18 @@
             "sortable": true
           },
           {
-            "name": "status",
+            "name": "status_text",
             "label": "状态",
             "sortable": true
           },
           {
-            "name": "trade_status",
+            "name": "trade_status_text",
             "label": "交易状态",
             "sortable": true
+          },
+          {
+            "name": "error_text",
+            "label": "错误信息"
           },
           {
             "type": "datetime",

@@ -131,8 +131,6 @@
             var url = params.url;
             var body = JSON.stringify(params.data);
 
-            console.log('token', token);
-
             var isAuth = url.indexOf('/api/v1/user/auth') >= 0;
             var headers = new Headers({
               "Authorization": "Bearer " + token
@@ -156,7 +154,6 @@
                 console.log(response);
                 if (isAuth && response.status === 0) {
                   token = response.data;
-                  console.log('get token', token)
                 }
                 // resolve(JSON.stringify(response));
                 resolve({ "data": response });
