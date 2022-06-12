@@ -4,8 +4,8 @@
   "body": [
     {
       "type": "form",
-      "initApi": "get:http://127.0.0.1:2020/api/v1/job/get?job_id=${params.id}",
-      "api": "post:http://127.0.0.1:2020/api/v1/job/update",
+      "initApi": "get:http://api.hulu4.com/api/v1/job/get?job_id=${params.id}",
+      "api": "post:http://api.hulu4.com/api/v1/job/update",
       "redirect": "/job/list",
       "body": [
         {

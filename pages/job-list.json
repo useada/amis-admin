@@ -5,7 +5,7 @@
       {
         "type": "crud",
         "name": "sample",
-        "api": "http://127.0.0.1:2020/api/v1/job/list",
+        "api": "http://api.hulu4.com/api/v1/job/list",
         "headerToolbar": [
             "reload"
         ],
@@ -34,7 +34,7 @@
             "label": "刷新",
             "type": "button",
             "actionType": "ajax",
-            "api": "http://127.0.0.1:2020/api/v1/job/list"
+            "api": "http://api.hulu4.com/api/v1/job/list"
           }
         ],
         "affixHeader": true,
@@ -117,7 +117,7 @@
                       "name": "sample-bulk-edit",
                       "body": {
                         "type": "form",
-                        "api": "post:http://127.0.0.1:2020/api/v1/job/update",
+                        "api": "post:http://api.hulu4.com/api/v1/job/update",
                         "data": {
                           "job_id": "${id}",
                           "name": "${name}",
@@ -176,7 +176,7 @@
                     "actionType": "ajax",
                     "api": {
                       "method": "post",
-                      "url": "http://127.0.0.1:2020/api/v1/job/start",
+                      "url": "http://api.hulu4.com/api/v1/job/start",
                       "data": {
                         "job_id": "${id}"
                       }
@@ -192,7 +192,7 @@
                     "confirmText": "您确认要停止?",
                     "api": {
                       "method": "post",
-                      "url": "http://127.0.0.1:2020/api/v1/job/stop",
+                      "url": "http://api.hulu4.com/api/v1/job/stop",
                       "data": {
                         "job_id": "${id}"
                       }
@@ -207,7 +207,7 @@
                     "confirmText": "您确认要开启交易?",
                     "api": {
                       "method": "post",
-                      "url": "http://127.0.0.1:2020/api/v1/job/start_trade",
+                      "url": "http://api.hulu4.com/api/v1/job/start_trade",
                       "data": {
                         "job_id": "${id}"
                       }
@@ -222,7 +222,7 @@
                     "confirmText": "您确认要停止交易?",
                     "api": {
                       "method": "post",
-                      "url": "http://127.0.0.1:2020/api/v1/job/stop_trade",
+                      "url": "http://api.hulu4.com/api/v1/job/stop_trade",
                       "data": {
                         "job_id": "${id}"
                       }
