@@ -36,13 +36,8 @@
             }
           ]
         },
-        "bulkActions": [
-          {
-            "label": "刷新",
-            "type": "button",
-            "actionType": "ajax",
-            "api": "http://api.hulu4.com/api/v1/broker/list"
-          }
+        "headerToolbar": [
+            "reload"
         ],
         "affixHeader": true,
         "columnsTogglable": "auto",
