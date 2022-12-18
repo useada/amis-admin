@@ -111,7 +111,7 @@
                     "label": "注销",
                     "level": "danger",
                     "actionType": "ajax",
-                    "api": "post:http://api.hulu4.com:2020/api/v1/broker/stopTrade",
+                    "api": "post:http://api.hulu4.com:2020/api/v1/broker/logout",
                     "confirmText": "您确认要注销?",
                     "visibleOn": "this.status!==0"
                   },
