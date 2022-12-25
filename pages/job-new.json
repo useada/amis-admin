@@ -7,7 +7,7 @@
       "title": "",
       "redirect": "/job/list",
       "name": "sample-edit-form",
-      "api": "http://api.hulu4.com:2020/api/v1/job/create",
+      "api": "/api/v1/job/create",
       "body": [
         {
           "type": "input-text",

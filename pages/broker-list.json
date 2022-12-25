@@ -15,7 +15,7 @@
       {
         "type": "crud",
         "name": "sample",
-        "api": "http://api.hulu4.com:2020/api/v1/broker/list",
+        "api": "/api/v1/broker/list",
         "filter": {
           "title": "",
           "mode": "inline",
@@ -89,7 +89,7 @@
                       "name": "sample-bulk-edit",
                       "body": {
                         "type": "form",
-                        "api": "post:http://api.hulu4.com:2020/api/v1/broker/auth",
+                        "api": "post:/api/v1/broker/auth",
                         "data": {
                           "accessKey": "${accessKey}",
                           "secretKey": "${secretKey}",
@@ -111,7 +111,7 @@
                     "label": "注销",
                     "level": "danger",
                     "actionType": "ajax",
-                    "api": "post:http://api.hulu4.com:2020/api/v1/broker/logout",
+                    "api": "post:/api/v1/broker/logout",
                     "confirmText": "您确认要注销?",
                     "visibleOn": "this.status!==0"
                   },
@@ -121,7 +121,7 @@
                     "level": "primary",
                     "actionType": "ajax",
                     "confirmText": "您确认要开启交易?",
-                    "api": "post:http://api.hulu4.com:2020/api/v1/broker/startTrade",
+                    "api": "post:/api/v1/broker/startTrade",
                     "visibleOn": "this.status == 2 && this.tradeStatus==0"
                   },
                   {
@@ -130,7 +130,7 @@
                     "level": "danger",
                     "actionType": "ajax",
                     "confirmText": "您确认要停止交易?",
-                    "api": "post:http://api.hulu4.com:2020/api/v1/broker/stopTrade",
+                    "api": "post:/api/v1/broker/stopTrade",
                     "visibleOn": "this.status == 2 && this.tradeStatus==1"
                   }
                 ]

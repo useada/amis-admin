@@ -131,6 +131,10 @@
             var url = params.url;
             var body = JSON.stringify(params.data);
 
+            if (url.indexOf('/api/v1/') >= 0) {
+              url = 'http://127.0.0.1:2020' + url
+            }
+
             var isAuth = url.indexOf('/api/v1/user/auth') >= 0;
             var headers = new Headers({
               "Authorization": "Bearer " + token

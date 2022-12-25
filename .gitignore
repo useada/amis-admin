@@ -2,3 +2,4 @@
 /package-lock.json
 /gh-pages
 .DS_Store
+.idea/
