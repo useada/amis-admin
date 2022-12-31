@@ -7,12 +7,24 @@
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
   <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+
   <link rel="stylesheet" title="default" href="https://unpkg.com/amis@beta/sdk/sdk.css" />
+  <!-- <link rel="stylesheet" title="default" href="https://unpkg.com/amis@beta/sdk/antd.css" /> -->
   <link rel="stylesheet" href="https://unpkg.com/amis@beta/sdk/helper.css" />
+  <link rel="stylesheet" href="https://unpkg.com/amis@beta/sdk/iconfont.css" />
   <script src="https://unpkg.com/amis@beta/sdk/sdk.js"></script>
   <script src="https://unpkg.com/vue@2"></script>
-  <script src="https://unpkg.com/history@4.10.1
-/umd/history.js"></script>
+  <script src="https://unpkg.com/history@4.10.1/umd/history.js"></script>
+
+  <!-- <link rel="stylesheet" title="default" href="/sdk/cxd.css" /> -->
+  <!-- <link rel="stylesheet" title="default" href="/sdk/helper.css" /> -->
+  <!-- <link rel="stylesheet" title="default" href="/sdk/iconfont.css" /> -->
+  <!-- <link rel="stylesheet" title="default" href="/sdk/antd.css" /> -->
+
+  <!-- <script src="/sdk/sdk.js"></script> -->
+  <!-- <script src="https://unpkg.com/vue@2"></script> -->
+  <!-- <script src="https://unpkg.com/history@4.10.1/umd/history.js"></script> -->
+
   <style>
     html,
     body,
@@ -47,7 +59,8 @@
           type: 'tpl',
           inline: false,
           className: 'w-full',
-          tpl: '<div class="flex justify-between"><div>顶部区域左侧</div><div>顶部区域右侧</div></div>'
+          // tpl: '<div class="flex justify-between"><div>顶部区域左侧</div><div>顶部区域右侧</div></div>'
+          tpl: '<div class="flex justify-between"><div>Admin</div><div></div></div>'
         },
         // footer: '<div class="p-2 text-center bg-light">底部区域</div>',
         // asideBefore: '<div class="p-2 text-center">菜单前面区域</div>',
@@ -217,6 +230,8 @@
           },
           isCurrentUrl: isCurrentUrl,
           theme: 'cxd'
+          // theme: 'antd'
+          // theme: 'dark'
         }
       );
 

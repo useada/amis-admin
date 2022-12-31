@@ -12,6 +12,7 @@ app.use(logger('dev'));
 app.use(bodyParser.json()); // Parses json, multi-part (file), url-encoded
 
 app.use('/public', express.static('public'));
+app.use('/sdk', express.static('sdk'));
 app.use('/pages', express.static('pages'));
 
 app.get('/*', function (req, res) {

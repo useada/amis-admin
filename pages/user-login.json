@@ -1,27 +1,81 @@
 {
-    "type": "page",
-    "title": "登陆",
-    "body": [
-      {
-        "type": "form",
-        "title": "",
-        "redirect": "/job/list",
-        "name": "sample-edit-form",
-        "api": "post:/api/v1/user/auth",
-        "body": [
-          {
-            "type": "input-email",
-            "name": "email",
-            "label": "邮箱",
-            "required": true
+  "type": "form",
+  "title": "",
+  "redirect": "/job/list",
+  "name": "sample-edit-form",
+  "api": "post:/api/v1/user/auth",
+  "body": [
+    {
+      "type": "flex",
+      "className": "p-1",
+      "items": [
+        {
+          "type": "wrapper",
+          "body": [
+            {
+              "type": "input-email",
+              "name": "email",
+              "label": "邮箱",
+              "required": true,
+              "id": "u:f597494173be",
+              "size": "full",
+              "mode": "horizontal"
+            }
+          ],
+          "size": "xs",
+          "style": {
+            "position": "static",
+            "display": "block",
+            "flex": "1 1 auto",
+            "flexGrow": 1,
+            "flexBasis": "auto"
           },
-          {
-            "type": "input-password",
-            "name": "password",
-            "label": "密码"
-          }
-        ],
-        "columnCount": 2
-      }
-    ]
-  }
+          "isFixedHeight": false,
+          "isFixedWidth": false,
+          "id": "u:eb43b911f089"
+        },
+        {
+          "type": "wrapper",
+          "body": [
+            {
+              "type": "input-password",
+              "name": "password",
+              "label": "密码",
+              "id": "u:4a62c1ed9be1",
+              "mode": "horizontal"
+            }
+          ],
+          "size": "xs",
+          "style": {
+            "position": "static",
+            "display": "block",
+            "flex": "1 1 auto",
+            "flexGrow": 1,
+            "flexBasis": "auto"
+          },
+          "isFixedHeight": false,
+          "isFixedWidth": false,
+          "id": "u:47ae5ddbbd18"
+        }
+      ],
+      "style": {
+        "position": "static",
+        "flexWrap": "nowrap",
+        "width": "500px",
+        "overflowX": "auto",
+        "margin": "0"
+      },
+      "direction": "column",
+      "justify": "flex-start",
+      "alignItems": "stretch",
+      "id": "u:b5e8f46c942a",
+      "isFixedHeight": false,
+      "isFixedWidth": true
+    }
+  ],
+  "columnCount": 2,
+  "id": "u:7f9cc63722cb",
+  "wrapWithPanel": true,
+  "mode": "normal",
+  "submitText": "登录"
+}
